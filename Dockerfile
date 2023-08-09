@@ -7,5 +7,6 @@ RUN apt install -y git
 RUN apt install -y python3.7 python3-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install tensorflow
+RUN pip3 install tqdm
 
 RUN mkdir /home/Dev

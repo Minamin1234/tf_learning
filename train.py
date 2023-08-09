@@ -52,13 +52,12 @@ if __name__ == "__main__":
     _val_values = _val["values"]
     _test_datas = _test["features"]
     _test_values = _test["values"]
-
+    print(len(_train_datas))
     _model = get_model(len(_train_datas[0]))
     _model.fit(
         _train_datas, _train_values,
         validation_data=(_val_datas, _val_values),
         epochs=200,
-        batch_size=32,
         use_multiprocessing=True
     )
     preds = _model.predict(_test_datas)
