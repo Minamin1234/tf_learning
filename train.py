@@ -27,7 +27,7 @@ if __name__ == "__main__":
     argp.add_argument("--train_path", default="train/train_data")
     argp.add_argument("--val_path", default="train/val_data")
     argp.add_argument("--test_path", default="train/test_data")
-    argp.add_argument("--model_path", default="train/model")
+    argp.add_argument("--model_path", default="log/")
     args = argp.parse_args()
     TRAIN_PATH = args.train_path
     VAL_PATH = args.val_path
@@ -62,6 +62,7 @@ if __name__ == "__main__":
         use_multiprocessing=True
     )
     preds = _model.predict(_test_datas)
-    print(preds)
-    print(_test_values)
+    _model.save(MODEL_PATH)
+    #print(preds)
+    #print(_test_values)
     pass

@@ -15,5 +15,6 @@ if __name__ == "__main__":
         _data = np.load(f, allow_pickle=True)
         for k in _data:
             print(k)
+            print(len(_data[k]))
             pass
     pass
